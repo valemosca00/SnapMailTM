@@ -120,7 +120,7 @@ Una volta creata la propria repository contenente il progetto:
 
 #### Eseguire lo script `setup_azure_resources.sh` per configurare le risorse
 
-Spostarsi nella cartella contenente lo script e renderlo eseguibile:
+Aprire il terminale, spostarsi nella cartella contenente lo script e renderlo eseguibile:
 
 ```bash
 chmod +x setup_azure_resources.sh
