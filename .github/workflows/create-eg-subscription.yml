@@ -1,0 +1,51 @@
+name: Create Event Grid Subscription
+
+on:
+  workflow_dispatch: # Esecuzione manuale del workflow
+
+jobs:
+  setup-eventgrid:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }} # Service Principal configurato come segreto
+
+    - name: Install Azure CLI
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y azure-cli
+
+    - name: Execute Event Grid Subscription Script
+      env:
+        RESOURCE_GROUP: SnapMailGroup
+        EVENT_GRID_TOPIC: delete-expired-email
+        FUNCTION_APP_NAME: SnapMailFuncApp
+        FUNCTION_NAME: delete_expired_email
+      run: |
+        # Recupero valori dinamici
+        SUBSCRIPTION_ID=$(az account show --query id -o tsv)
+        EVENT_GRID_TOPIC_RESOURCE_ID="/subscriptions/$SUBSCRIPTION_ID/resourceGroups/$RESOURCE_GROUP/providers/Microsoft.EventGrid/topics/$EVENT_GRID_TOPIC"
+        
+        # Recupero l'ID completo della funzione Azure
+        FUNCTION_RESOURCE_ID=$(az functionapp function show \
+          --name $FUNCTION_APP_NAME \
+          --function-name $FUNCTION_NAME \
+          --resource-group $RESOURCE_GROUP \
+          --query "id" -o tsv)
+
+        # Crea la sottoscrizione Event Grid
+        az eventgrid event-subscription create \
+          --name delete-expired-email-subscription \
+          --source-resource-id "$EVENT_GRID_TOPIC_RESOURCE_ID" \
+          --included-event-types EmailExpired \
+          --endpoint "$FUNCTION_RESOURCE_ID" \
+          --endpoint-type azurefunction
+
+        echo "Sottoscrizione Event Grid creata con successo!"
+

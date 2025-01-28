@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genera Email - SnapMail</title>
+  <!-- Collegamento al file CSS esterno -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <!-- Collegamento a Font Awesome per le icone -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header class="banner">
+    <a href="index.html" class="site-title">SnapMail</a>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <!-- Sinistra: Istruzioni -->
+      <div class="left-container">
+        <h2>Come utilizzare la tua email usa e getta?</h2>
+        <ol>
+          <li><strong>Scegli un indirizzo email usa e getta</strong><br>
+            Nessuna ispirazione per una email personalizzata? Usa il generatore di indirizzi email casuale.
+          </li>
+          <li><strong>Data di scadenza personalizzata</strong><br>
+            È possibile specificare una data di scadenza fino a un massimo di una settimana da oggi. 
+            Se non impostata, la scadenza predefinita sarà di 24 ore dalla creazione della email temporanea.
+          </li>
+          <li><strong>Usa questo indirizzo email temporaneo su Internet</strong><br>
+            Proteggi il tuo indirizzo email personale e utilizza preferibilmente questo indirizzo temporaneo come cestino per lo spam. 
+            Salvaguarda la tua privacy e rimani anonimo.
+          </li>
+          <li><strong>Controlla le email su SnapMail</strong><br>
+            Le email sono visibili nella webmail. Basta cliccare sul pulsante di aggiornamento per verificare la posta in arrivo.
+          </li>
+        </ol>
+      </div>
+
+      <!-- Destra: Form e bottoni -->
+      <div class="right-container">
+        <div class="upper-container">
+          <h1 class="main-title">Genera la tua Email Temporanea</h1>
+          <div class="input-container">
+            <input type="text" id="custom-name" placeholder="Inserisci il nome della tua email (senza @dominio)">
+          </div>
+          <div class="button-container">
+            <button id="generate-custom-email" class="custom-email-btn">Genera Email Personalizzata</button>
+            <button id="generate-random-email" class="random-email-btn">Genera Email Casuale</button>
+          </div>
+          <p><strong>È possibile selezionare una scadenza entro i prossimi sette giorni.</strong><br>
+          <div class="time-picker-container">
+            <input type="datetime-local" id="expiry-date">
+          </div>
+        </div>
+        <div class="lower-container">
+            <div class="check-email-container">
+              <p><strong>Hai una email che non è ancora scaduta?</strong><br>
+                Inserisci nel campo sottostante l'indirizzo email per l'accesso.
+              </p>
+              <div class="check-email-input">
+                <input type="text" id="check-email" placeholder="Inserisci il tuo indirizzo email">
+                <button id="check-email-btn">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+        </div>
+      </div>      
+    </div>
+  </main>
+
+  <!-- Rotellina di caricamento -->
+  <div id="loading-spinner" class="hidden">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    window.env = {
+      CHECK_EMAIL_ENDPOINT: "__CHECK_EMAIL_ENDPOINT__",
+      GENERATE_EMAIL_ENDPOINT: "__GENERATE_EMAIL_ENDPOINT__",
+      DELETE_EMAIL_ENDPOINT: "__DELETE_EMAIL_ENDPOINT__",
+      LOAD_INBOX_ENDPOINT: "__LOAD_INBOX_ENDPOINT__"
+    };
+  </script>
+  <script type="module" src="javascript/index.js"></script>
+</body>
+</html>

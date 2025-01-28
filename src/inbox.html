@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox - SnapMail</title>
+    <!-- Collegamento al file CSS -->
+    <link rel="stylesheet" href="inbox.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="banner">
+        <a href="index.html" class="site-title">SnapMail</a>
+    </header>
+
+    <div class="container">
+        <!-- Colonna laterale -->
+        <aside class="sidebar">
+            <ul class="menu">
+                <li class="menu-item" id= "reload-inbox">
+                    <span class="icon"><i class="fas fa-envelope"></i></span> Posta in arrivo
+                </li>
+                <li class="menu-item" id="refresh-inbox">
+                    <span class="icon"><i class="fas fa-sync"></i></span> Aggiorna
+                </li>
+                <li class="menu-item delete-email" id="delete-email">
+                    <span class="icon"><i class="fas fa-trash"></i></span> Elimina Casella
+                </li>
+                <li class="menu-item" id="download-inbox">
+                    <span class="icon"><i class="fas fa-download"></i></span> Scarica Inbox
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Contenuto principale -->
+        <main>
+            <!-- Parte superiore -->
+            <div class="top-bar">
+                <div class="left-section">
+                    <span class="icon"><i class="far fa-envelope"></i>
+                    <span class="email-address">email@example.com</span>
+                    <button id="copy-button">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                <span class="expiry-date">Scade il: 01/01/2025</span>
+            </div>          
+
+            <!-- Lista delle email -->
+            <h1>Inbox</h1>
+            <ul class="email-list">
+                <!-- Inserite dinamicamente le email -->
+            </ul>
+        </main>
+    </div>
+
+    <!-- Rotellina di caricamento -->
+    <div id="loading-spinner" class="hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        window.env = {
+          CHECK_EMAIL_ENDPOINT: "__CHECK_EMAIL_ENDPOINT__",
+          GENERATE_EMAIL_ENDPOINT: "__GENERATE_EMAIL_ENDPOINT__",
+          DELETE_EMAIL_ENDPOINT: "__DELETE_EMAIL_ENDPOINT__",
+          LOAD_INBOX_ENDPOINT: "__LOAD_INBOX_ENDPOINT__"
+        };
+    </script>
+    <script type="module" src="javascript/inbox.js"></script>
+</body>
+</html>

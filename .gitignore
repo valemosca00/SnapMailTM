@@ -1,0 +1,13 @@
+node_modules/
+/test-results/
+
+__azurite_db_blob__.json
+__azurite_db_blob_extent__.json
+__azurite_db_table__.json
+__azurite_db_queue__.json
+__azurite_db_queue_extent__.json
+__blobstorage__/11b9cc2b-abe7-458a-be5d-fa6302596f99
+__blobstorage__/7d375477-1691-453b-bf3e-5325c67cbcdd
+__blobstorage__/c2045f26-c3ba-48d1-83a1-2cfa024a9605
+
+.env

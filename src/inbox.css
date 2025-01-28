@@ -1,0 +1,272 @@
+/* Stili globali */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Banner in alto */
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg,#0056b3, #007bff);
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+/* Layout principale */
+.container {
+  display: flex;
+  height: calc(100vh - 60px); /* Altezza totale meno il banner */
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.menu-item .icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.menu-item:hover {
+  background-color: #d3d3d3;
+}
+
+.menu-item.delete-email:hover {
+  background-color: #ff8484; /* Rosso pastello */
+}
+
+/* Contenuto principale */
+main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Espandere il rettangolo con la data */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5; /* Colore di sfondo del banner */
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar .left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Spaziatura tra email e bottone */
+}
+
+.top-bar .expiry-date {
+  font-style: italic;
+  color: red;
+}
+
+
+/* Lista delle email */
+.email-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.email-item {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* La larghezza non supera quella del contenitore */
+  box-sizing: border-box;
+}
+
+.email-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.email-item .sender-name {
+  font-weight: bold;
+  font-size: 16px;
+  color: #007bff;
+}
+
+.email-item .sender-email {
+  display: block;
+  font-size: 16px;
+  color: #555;
+}
+
+.email-item .email-subject {
+  display: block;
+  font-size: 18px;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* Header dell'email */
+.email-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Info mittente e soggetto */
+.email-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sender-info {
+  display: flex; /* Posiziona nome, email e freccia sulla stessa riga */
+  align-items: center; /* Allinea verticalmente gli elementi */
+  justify-content: flex-start; /* Allinea i contenuti all'inizio */
+  width: 100%; /* La riga si estende per tutta la larghezza del contenitore */
+}
+
+
+.sender-info .sender-name,
+.sender-info .sender-email {
+  margin-right: 10px; /* Aggiunge uno spazio tra nome ed email */
+}
+
+.sender-info .arrow {
+  margin-left: auto; /* Spinge la freccia a destra */
+  font-size: 20px;
+  color: #007bff;
+  cursor: pointer; /* Cambia il cursore per indicare che è cliccabile */
+  transition: transform 0.2s ease; /* Effetto visivo */
+}
+
+.sender-info .arrow:hover {
+  color: #0056b3; /* Cambia colore al passaggio del mouse */
+}
+
+/* Anteprima del contenuto */
+.email-preview {
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+  display: block;
+  max-height: 3em; /* Due righe di altezza approssimativa */
+  line-height: 1.5em;
+  white-space: nowrap;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* La larghezza non supera quella del contenitore */
+  box-sizing: border-box;
+}
+
+/* Contenuto completo */
+.email-full-content {
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+  display: none; /* Nasconde il contenuto completo per impostazione predefinita */
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* La larghezza non supera quella del contenitore */
+  box-sizing: border-box;
+}
+
+.email-item .time {
+  margin-top: 10px;
+  align-self: flex-end;
+  font-size: 14px;
+  color: #999;
+}
+
+/* Contenitore della rotellina di caricamento */
+#loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Sfondo semitrasparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Stile della rotellina */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3; /* Bordo grigio chiaro */
+  border-top: 5px solid #007bff; /* Bordo superiore blu */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animazione di rotazione */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Nascondi contenitore inizialmente */
+.hidden {
+  display: none !important; /* Forza la non visibilità */
+}
+
+/* Disabilita interazione con la pagina */
+.disable-click {
+  pointer-events: none;
+}

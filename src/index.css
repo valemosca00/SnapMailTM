@@ -1,0 +1,265 @@
+/* CSS per il layout */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f4f7fc, #f4f7fc); 
+  color: #333;
+  line-height: 1.6;
+}
+
+.banner {
+  background: linear-gradient(90deg,#0056b3, #007bff);
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-title {
+  font-size: 28px;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 40px auto;
+  display: flex;
+  gap: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.right-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.upper-container {
+  flex: 1; /* Occupa tutto lo spazio disponibile */
+  background: #f8f9fa;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.lower-container {
+  flex: 0.3; /* Occupa meno spazio */
+  margin-top: 2px;
+  background: #f8f9fa;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.left-container {
+  flex: 0.8;
+  background: #f8f9fa;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: left; /* Allinea tutto il contenuto a sinistra */
+  line-height: 1.6; /* Migliora la leggibilità del testo */
+}
+
+.left-container ol {
+  padding-left: 20px; /* Spaziatura uniforme per gli elenchi */
+}
+
+.left-container li {
+  margin-bottom: 16px; /* Aggiunge spazio tra gli elementi della lista */
+  text-align: left; /* Forza l'allineamento a sinistra */
+  font-size: 16px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 32px;
+  color: #0056b3;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-container,
+.button-container,
+.time-picker-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.input-container input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.input-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.custom-email-btn,
+.random-email-btn {
+  flex: 1;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-email-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.custom-email-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.random-email-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.random-email-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Stile per il time picker */
+.time-picker-container label {
+  flex: 0.4; /* Larghezza del label */
+  text-align: right; /* Allineamento del testo */
+  font-size: 16px;
+}
+
+.time-picker-container input {
+  flex: 1;
+  padding: 12px; /* Stesso padding degli altri campi */
+  border: 1px solid #ccc; /* Bordo uguale agli altri campi */
+  border-radius: 8px; /* Stesso arrotondamento */
+  font-size: 16px; /* Stessa dimensione del testo */
+  transition: all 0.3s ease;
+}
+
+.time-picker-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.check-email-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.check-email-container p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.check-email-input {
+  display: flex;
+  gap: 10px;
+}
+
+.check-email-container input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.check-email-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.check-email-container button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-email-container button i {
+  font-size: 18px;
+}
+
+.check-email-container button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Contenitore della rotellina di caricamento */
+#loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Sfondo semitrasparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Stile della rotellina */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3; /* Bordo grigio chiaro */
+  border-top: 5px solid #007bff; /* Bordo superiore blu */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animazione di rotazione */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Nascondi contenitore inizialmente */
+.hidden {
+  display: none !important; /* Forza la non visibilità */
+}
+
+/* Disabilita interazione con la pagina */
+.disable-click {
+  pointer-events: none;
+}
+
