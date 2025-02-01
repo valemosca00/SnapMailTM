@@ -51,7 +51,7 @@ async function loadInbox(email, token) {
     });
 
     if (response.ok) {
-      const data = await response.json(); // Ottieni i messaggi arricchiti
+      const data = await response.json(); // Ottieni i messaggi 
       console.log("Inbox caricata dal Blob Storage:", data);
 
       // Popola la lista delle email
@@ -82,7 +82,7 @@ async function downloadInbox(email, token) {
     });
 
     if (response.ok) {
-      const data = await response.json(); // Ottieni i messaggi arricchiti
+      const data = await response.json(); // Ottieni i messaggi 
       console.log("Inbox caricata dal Blob Storage:", data);
       return data;
     } else {
@@ -129,8 +129,8 @@ document.getElementById("delete-email").addEventListener("click", function () {
   const confirmed = confirm("Sei sicuro di voler eliminare questa email? Questa operazione è irreversibile.");
   if (confirmed) {
       // Avvia l'eliminazione dell'email
-      const partitionKey = "Emails"; // Sostituisci con il PartitionKey corretto
-      const rowKey = email; // Sostituisci con il RowKey corretto o ottienilo dinamicamente
+      const partitionKey = "Emails"; 
+      const rowKey = email; 
       callDeleteEmailFunction(partitionKey, rowKey);
   }
 });

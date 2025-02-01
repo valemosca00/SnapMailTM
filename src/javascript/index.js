@@ -67,7 +67,7 @@ document.getElementById("generate-custom-email").addEventListener("click", async
   const { isValid, expiryDate, error } = getValidExpiryDate(expiryDateInput);
 
   if (!isValid) {
-    alert(error); // Mostra il messaggio di errore appropriato
+    alert(error); 
     return;
   }
 
@@ -111,7 +111,7 @@ document.getElementById("generate-random-email").addEventListener("click", async
   const { isValid, expiryDate, error } = getValidExpiryDate(expiryDateInput);
 
   if (!isValid) {
-    alert(error); // Mostra il messaggio di errore appropriato
+    alert(error); 
     return;
   }
 

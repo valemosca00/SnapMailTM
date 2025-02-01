@@ -147,16 +147,16 @@ body {
 /* Stile per il time picker */
 .time-picker-container label {
   flex: 0.4; /* Larghezza del label */
-  text-align: right; /* Allineamento del testo */
+  text-align: right; 
   font-size: 16px;
 }
 
 .time-picker-container input {
   flex: 1;
-  padding: 12px; /* Stesso padding degli altri campi */
-  border: 1px solid #ccc; /* Bordo uguale agli altri campi */
-  border-radius: 8px; /* Stesso arrotondamento */
-  font-size: 16px; /* Stessa dimensione del testo */
+  padding: 12px; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  font-size: 16px; 
   transition: all 0.3s ease;
 }
 
