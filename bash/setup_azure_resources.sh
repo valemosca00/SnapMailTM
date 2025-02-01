@@ -3,8 +3,8 @@
 
 # Variabili
 RESOURCE_GROUP="SnapMailGroup"
-LOCATION="CentralUS" # Rimane Central US come richiesto
-STORAGE_ACCOUNT_NAME="snapstorage$(date +%s | tail -c 7)" # Nome conforme ai requisiti
+LOCATION="CentralUS" 
+STORAGE_ACCOUNT_NAME="snapstorage$(date +%s | tail -c 7)" 
 WEB_APP_NAME="SnapMail"
 APP_PLAN_NAME="ASP-SnapMail-Plan" # Nome del piano di servizio per Function App
 GITHUB_REPO="https://github.com/valemosca00/SnapMailTM.git"
